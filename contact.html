@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Heagrance - Get in Touch</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h1>Heagrance</h1>
+            <p class="tagline">Scents that tell your story</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Collections</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-icons">
+            <a href="#" class="icon"><i class="fas fa-search"></i></a>
+            <a href="#" class="icon"><i class="fas fa-user"></i></a>
+            <a href="#" class="icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+        </div>
+    </header>
+
+    <main class="contact-page">
+        <section class="contact-hero">
+            <div class="contact-hero-content">
+                <h1>Get in Touch</h1>
+                <p>We'd love to hear from you. Reach out with any questions about our fragrances or services.</p>
+            </div>
+        </section>
+
+        <section class="contact-options">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Visit Us</h3>
+                        <p>Experience our fragrances in person at one of our boutiques</p>
+                        <div class="contact-details">
+                            <p><strong>Paris:</strong> 16 Rue de la Paix, 75002 Paris, France</p>
+                            <p><strong>New York:</strong> 175 Spring Street, New York, NY 10012</p>
+                            <p><strong>Tokyo:</strong> 4-12-3 Ginza, Chuo City, Tokyo 104-0061</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Call Us</h3>
+                        <p>Speak directly with our customer care specialists</p>
+                        <div class="contact-details">
+                            <p><strong>International:</strong> <a href="tel:+33142501020">+33 1 42 50 10 20</a></p>
+                            <p><strong>USA & Canada:</strong> <a href="tel:+12123334444">+1 212 333 4444</a></p>
+                            <p><strong>Asia Pacific:</strong> <a href="tel:+81335770123">+81 3 3577 0123</a></p>
+                        </div>
+                        <p class="hours">Available Monday-Friday: 9am-6pm (Local Time)</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Us</h3>
+                        <p>We'll respond to your inquiry within 24 hours</p>
+                        <div class="contact-details">
+                            <p><strong>Customer Service:</strong> <a href="mailto:customercare@heagrance.com">customercare@heagrance.com</a></p>
+                            <p><strong>Press Inquiries:</strong> <a href="mailto:press@heagrance.com">press@heagrance.com</a></p>
+                            <p><strong>Partnerships:</strong> <a href="mailto:partnerships@heagrance.com">partnerships@heagrance.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2>Send Us a Message</h2>
+                        <p>Complete the form below and we'll get back to you as soon as possible</p>
+                    </div>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name *</label>
+                                <input type="text" id="first-name" name="first-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name *</label>
+                                <input type="text" id="last-name" name="last-name" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Subscribe to our newsletter to receive updates on new collections and exclusive offers</label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <label for="privacy">I have read and agree to the <a href="#">Privacy Policy</a> *</label>
+                        </div>
+                        <button type="submit" class="btn submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What is your return policy?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We accept returns within 30 days of purchase for unused and unopened products in their original packaging. Please contact our customer service team to initiate a return.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do you offer free shipping?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer complimentary standard shipping on all orders over $100. For orders under $100, a flat shipping rate of $10 applies.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can I request fragrance samples?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer a sampling program that allows you to experience our fragrances before committing to a full-size bottle. You can order a set of three samples for $15, which is redeemable towards a future full-size purchase.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Are your fragrances cruelty-free?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely. All Heagrance products are 100% cruelty-free. We never test our products on animals and work only with suppliers who uphold the same ethical standards.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do you ship internationally?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we ship to over 90 countries worldwide. International shipping rates and delivery times vary based on your location. You can view specific rates at checkout.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <div class="container">
+                <h2>Find Our Flagship Store</h2>
+                <div class="map-container">
+                    <!-- Replace with actual map embed code when available -->
+                    <img src="https://placehold.co/1200x400" alt="Map of Heagrance Paris Flagship Store" class="map-placeholder">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>Heagrance</h3>
+                <p>Luxury fragrances for the discerning customer. Crafted with passion and the finest ingredients.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="products.html">All Perfumes</a></li>
+                    <li><a href="#">Women's Collection</a></li>
+                    <li><a href="#">Men's Collection</a></li>
+                    <li><a href="#">Gift Sets</a></li>
+                    <li><a href="#">Special Offers</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Information</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Fragrance Guide</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Heagrance. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
