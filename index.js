@@ -47,100 +47,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
-    // Add to cart functionality
-    const setupCartFunctionality = () => {
-        const addToCartBtns = document.querySelectorAll('.hover-icons .fa-shopping-cart');
-        const cartCount = document.querySelector('.cart-count');
-        let count = 0;
-
-        addToCartBtns.forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Increment cart count
-                count++;
-                cartCount.textContent = count;
-                
-                // Get product info
-                const productCard = this.closest('.product-card');
-                const productName = productCard.querySelector('h3').textContent;
-                
-                // Show notification
-                showNotification(`${productName} added to cart!`);
-            });
-        });
-    };
-
-    // Display notification
-    const showNotification = (message, type = 'success') => {
-        const notification = document.createElement('div');
-        notification.className = `notification ${type}`;
-        notification.textContent = message;
-        
-        document.body.appendChild(notification);
-        
-        // Animate notification
-        setTimeout(() => {
-            notification.classList.add('show');
-        }, 10);
-        
-        // Remove notification after 3 seconds
-        setTimeout(() => {
-            notification.classList.remove('show');
-            setTimeout(() => {
-                notification.remove();
-            }, 300);
-        }, 3000);
-    };
-
-    // Newsletter subscription functionality
-    const setupNewsletterForm = () => {
-        const form = document.querySelector('.newsletter-form');
-        
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const email = this.querySelector('input[type="email"]').value;
-                
-                if (email) {
-                    showNotification('Thank you for subscribing to our newsletter!');
-                    this.reset();
-                }
-            });
-        }
-    };
-
     // Initialize all functionality
     setupMobileMenu();
     setupProductHover();
-    setupCartFunctionality();
-    setupNewsletterForm();
 
     // Add CSS for notifications and mobile menu
     const addDynamicStyles = () => {
         const style = document.createElement('style');
         style.textContent = `
-            .notification {
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                background-color: #333;
-                color: white;
-                padding: 15px 25px;
-                border-radius: 4px;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-                transform: translateY(100px);
-                opacity: 0;
-                transition: transform 0.3s ease, opacity 0.3s ease;
-                z-index: 1000;
-            }
-            
-            .notification.show {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            
             .hamburger {
                 display: none;
                 flex-direction: column;
@@ -260,16 +174,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         emailField.classList.add('error');
                     }
                 }
-                
-                if (isValid) {
-                    // In a real application, you would send the form data to a server here
-                    // For now, just show a success message
-                    showNotification('Thank you for your message. We will get back to you shortly!');
-                    contactForm.reset();
-                } else {
-                    showNotification('Please fill in all required fields correctly.', 'error');
-                }
-            });
             
             // Remove error class on input
             const formInputs = contactForm.querySelectorAll('input, textarea');
@@ -293,10 +197,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 border-color: #ff3860 !important;
             }
             
-            .notification.error {
-                background-color: #ff3860;
-            }
-            
             .faq-item.active .faq-answer {
                 display: block;
             }
@@ -305,4 +205,145 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     addContactPageStyles();
+});
+
+// Products page functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Products filtering and sorting
+    const setupProductsPage = () => {
+        // Price range slider functionality
+        const setupPriceRangeSlider = () => {
+            const minSlider = document.getElementById('price-min');
+            const maxSlider = document.getElementById('price-max');
+            const minValue = document.getElementById('min-value');
+            const maxValue = document.getElementById('max-value');
+            
+            if (minSlider && maxSlider) {
+                // Update the slider values
+                const updateValues = () => {
+                    minValue.textContent = minSlider.value;
+                    maxValue.textContent = maxSlider.value;
+                };
+                
+                // Ensure min doesn't exceed max
+                minSlider.addEventListener('input', () => {
+                    const minVal = parseInt(minSlider.value);
+                    const maxVal = parseInt(maxSlider.value);
+                    
+                    if (minVal > maxVal) {
+                        minSlider.value = maxVal;
+                    }
+                    
+                    updateValues();
+                });
+                
+                // Ensure max doesn't go below min
+                maxSlider.addEventListener('input', () => {
+                    const minVal = parseInt(minSlider.value);
+                    const maxVal = parseInt(maxSlider.value);
+                    
+                    if (maxVal < minVal) {
+                        maxSlider.value = minVal;
+                    }
+                    
+                    updateValues();
+                });
+                
+                // Initialize values
+                updateValues();
+            }
+        };
+        
+        // Filter toggle functionality for mobile
+        const setupFilterToggle = () => {
+            const filterToggleBtn = document.querySelector('.filter-toggle');
+            const filterSidebar = document.querySelector('.filter-sidebar');
+            
+            if (filterToggleBtn && filterSidebar) {
+                filterToggleBtn.addEventListener('click', () => {
+                    filterSidebar.classList.toggle('show-filters');
+                });
+            }
+        };
+        
+        // Remove filter functionality
+        const setupRemoveFilter = () => {
+            const removeFilterBtns = document.querySelectorAll('.remove-filter');
+            
+            removeFilterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // In a real app, this would remove the filter and rerender products
+                    const filterTag = this.closest('.active-filter');
+                    filterTag.remove();
+                });
+            });
+        };
+        
+        // Reset filters button
+        const setupResetFilters = () => {
+            const resetBtn = document.querySelector('.reset-filters-btn');
+            const checkboxes = document.querySelectorAll('.filter-options input[type="checkbox"]');
+            const priceMin = document.getElementById('price-min');
+            const priceMax = document.getElementById('price-max');
+            
+            if (resetBtn) {
+                resetBtn.addEventListener('click', () => {
+                    // Reset all checkboxes
+                    checkboxes.forEach(checkbox => {
+                        checkbox.checked = false;
+                    });
+                    
+                    // Reset price sliders
+                    if (priceMin && priceMax) {
+                        priceMin.value = priceMin.min;
+                        priceMax.value = priceMax.max;
+                        
+                        // Trigger input event to update the display values
+                        const inputEvent = new Event('input');
+                        priceMin.dispatchEvent(inputEvent);
+                        priceMax.dispatchEvent(inputEvent);
+                    }
+                });
+            }
+        };
+        
+        // Pagination functionality
+        const setupPagination = () => {
+            const paginationBtns = document.querySelectorAll('.pagination-btn, .pagination-next');
+            
+            paginationBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // In a real app, this would load the appropriate page
+                    // For demo, we'll just update the active state
+                    if (!this.classList.contains('pagination-next')) {
+                        document.querySelector('.pagination-btn.active').classList.remove('active');
+                        this.classList.add('active');
+                    } else {
+                        // Handle next button
+                        const activePage = document.querySelector('.pagination-btn.active');
+                        const nextPage = activePage.nextElementSibling;
+                        
+                        if (nextPage && nextPage.classList.contains('pagination-btn')) {
+                            activePage.classList.remove('active');
+                            nextPage.classList.add('active');
+                        }
+                    }
+                });
+            });
+        };
+        
+        // Initialize products page functionality
+        setupPriceRangeSlider();
+        setupFilterToggle();
+        setupRemoveFilter();
+        setupResetFilters();
+        setupApplyFilters();
+        setupSorting();
+        setupPagination();
+    };
+    
+    // Initialize products page if on products page
+    if (document.querySelector('.products-page')) {
+        setupProductsPage();
+    }
 });

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heagrance Collections - Luxury Perfumes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h1>Heagrance</h1>
+            <p class="tagline">Scents that tell your story</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Collections</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-icons">
+            <a href="#" class="icon"><i class="fas fa-search"></i></a>
+            <a href="#" class="icon"><i class="fas fa-user"></i></a>
+            <a href="#" class="icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+        </div>
+    </header>
+
+    <main class="products-page">
+        <section class="products-hero">
+            <div class="products-hero-content">
+                <h1>Our Collections</h1>
+                <p>Discover our range of exquisite scents crafted with the finest ingredients</p>
+            </div>
+        </section>
+
+        <section class="products-filters">
+            <div class="container">
+                <div class="filter-container">
+                    <div class="filter-row">
+                        <div class="active-filters">
+                            <span class="active-filter-label">Showing:</span>
+                            <span class="active-filter">All Collections <button class="remove-filter"><i class="fas fa-times"></i></button></span>
+                        </div>
+                        <div class="sort-dropdown">
+                            <label for="sort">Sort by:</label>
+                            <select id="sort" name="sort">
+                                <option value="newest">Newest</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="popular">Most Popular</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-grid-section">
+            <div class="container">
+                <div class="products-layout">
+                    <aside class="filter-sidebar">
+                        <div class="filter-group">
+                            <h3>Collections</h3>
+                            <ul class="filter-options">
+                                <li>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="collection" value="signature">
+                                        <span>Signature Series</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="collection" value="artisan">
+                                        <span>Artisan Collection</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="collection" value="exclusive">
+                                        <span>Exclusive Edition</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="collection" value="seasonal">
+                                        <span>Seasonal Releases</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="filter-group">
+                            <h3>Fragrance Family</h3>
+                            <ul class="filter-options">
+                                <li>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="family" value="floral">
+                                        <span>Floral</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="family" value="oriental">
+                                        <span>Oriental</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="family" value="woody">
+                                        <span>Woody</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="family" value="fresh">
+                                        <span>Fresh</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="family" value="fruity">
+                                        <span>Fruity</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="filter-group">
+                            <h3>Price Range</h3>
+                            <div class="price-slider">
+                                <div class="price-range">
+                                    <input type="range" id="price-min" min="0" max="500" value="0" class="price-input">
+                                    <input type="range" id="price-max" min="0" max="500" value="500" class="price-input">
+                                </div>
+                                <div class="price-values">
+                                    <span>$<span id="min-value">0</span></span>
+                                    <span>$<span id="max-value">500</span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <h3>Size</h3>
+                            <ul class="filter-options">
+                                <li>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="size" value="travel">
+                                        <span>Travel Size (15ml)</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="size" value="small">
+                                        <span>Small (30ml)</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="size" value="standard">
+                                        <span>Standard (50ml)</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="size" value="large">
+                                        <span>Large (100ml)</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="btn apply-filters-btn">Apply Filters</button>
+                        <button class="reset-filters-btn">Reset All</button>
+                    </aside>
+                    
+                    <div class="products-grid">
+                        <!-- Product 1 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://www.victoriassecretbeauty.co.id/on/demandware.static/-/Sites-vs-master-beauty-catalog/default/dw7f36bee5/images/large/112047174285_OF_F.jpg" alt="Midnight Bloom Perfume">
+                                <div class="hover-icons">
+                                    <a href="#" title="Quick View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" title="Add to Cart"><i class="fas fa-shopping-cart"></i></a>
+                                    <a href="#" title="Add to Wishlist"><i class="fas fa-heart"></i></a>
+                                </div>
+                            </div>
+                            <h3>Midnight Bloom</h3>
+                            <p class="product-desc">A seductive blend of jasmine, amber, and vanilla</p>
+                            <div class="price">$120.00</div>
+                        </div>
+                        
+                        <!-- Product 2 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://princeparfums.com/cdn/shop/files/AMBERWOODSMAIN_52538515-e15d-4806-a236-9c49a12d564f_1024x1024.jpg" alt="Amber Woods Perfume">
+                                <div class="hover-icons">
+                                    <a href="#" title="Quick View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" title="Add to Cart"><i class="fas fa-shopping-cart"></i></a>
+                                    <a href="#" title="Add to Wishlist"><i class="fas fa-heart"></i></a>
+                                </div>
+                            </div>
+                            <h3>Amber Woods</h3>
+                            <p class="product-desc">Warm notes of amber, cedarwood, and sandalwood</p>
+                            <div class="price">$135.00</div>
+                        </div>
+                        
+                        <!-- Product 3 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://livinglibations.com/cdn/shop/files/sunrise-cologne-l_hires_1_89d62656-18f9-4a3f-9f1c-1b1893dc2589.jpg" alt="Citrus Sunrise Perfume">
+                                <div class="hover-icons">
+                                    <a href="#" title="Quick View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" title="Add to Cart"><i class="fas fa-shopping-cart"></i></a>
+                                    <a href="#" title="Add to Wishlist"><i class="fas fa-heart"></i></a>
+                                </div>
+                            </div>
+                            <h3>Citrus Sunrise</h3>
+                            <p class="product-desc">Refreshing bergamot, lemon, and grapefruit</p>
+                            <div class="price">$95.00</div>
+                        </div>
+                        
+                        <!-- Product 4 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://zhor.com/cdn/shop/products/Rose_Elixir_Packshot_white_sRGB_edited.jpg?v=1683382298&width=1080" alt="Rose Elixir Perfume">
+                                <div class="hover-icons">
+                                    <a href="#" title="Quick View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" title="Add to Cart"><i class="fas fa-shopping-cart"></i></a>
+                                    <a href="#" title="Add to Wishlist"><i class="fas fa-heart"></i></a>
+                                </div>
+                            </div>
+                            <h3>Rose Elixir</h3>
+                            <p class="product-desc">Luxurious rose, patchouli, and pink pepper</p>
+                            <div class="price">$150.00</div>
+                        </div>
+                        
+                        <!-- Product 5 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://alrehab.com/wp-content/uploads/2024/05/Z0F5XajNwYPgUFyQai7QGG5fKQl7f8AgqxFkZBKd.webp" alt="Ocean Breeze Perfume">
+                                <div class="hover-icons">
+                                    <a href="#" title="Quick View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" title="Add to Cart"><i class="fas fa-shopping-cart"></i></a>
+                                    <a href="#" title="Add to Wishlist"><i class="fas fa-heart"></i></a>
+                                </div>
+                            </div>
+                            <h3>Ocean Breeze</h3>
+                            <p class="product-desc">Fresh sea salt, cucumber, and white musk</p>
+                            <div class="price">$110.00</div>
+                        </div>
+                        
+                        <!-- Product 6 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://m.media-amazon.com/images/I/81rvjmAMIrL.jpg" alt="Velvet Noir Perfume">
+                                <div class="hover-icons">
+                                    <a href="#" title="Quick View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" title="Add to Cart"><i class="fas fa-shopping-cart"></i></a>
+                                    <a href="#" title="Add to Wishlist"><i class="fas fa-heart"></i></a>
+                                </div>
+                            </div>
+                            <h3>Velvet Noir</h3>
+                            <p class="product-desc">Dark vanilla, black orchid, and tonka bean</p>
+                            <div class="price">$175.00</div>
+                        </div>
+                        
+                        <!-- Product 7 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.tokopedia.net/img/cache/500-square/VqbcmM/2024/8/9/811cc83e-daf7-4951-9e6f-9756fad7b9f2.jpg" alt="Golden Oud Perfume">
+                                <div class="hover-icons">
+                                    <a href="#" title="Quick View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" title="Add to Cart"><i class="fas fa-shopping-cart"></i></a>
+                                    <a href="#" title="Add to Wishlist"><i class="fas fa-heart"></i></a>
+                                </div>
+                            </div>
+                            <h3>Golden Oud</h3>
+                            <p class="product-desc">Luxurious agarwood, saffron, and amber</p>
+                            <div class="price">$225.00</div>
+                        </div>
+                        
+                        <!-- Product 8 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://ogabo.lk/wp-content/uploads/2023/10/vicole-perfume-lavendar-dreams-6.jpg" alt="Lavender Dreams Perfume">
+                                <div class="hover-icons">
+                                    <a href="#" title="Quick View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" title="Add to Cart"><i class="fas fa-shopping-cart"></i></a>
+                                    <a href="#" title="Add to Wishlist"><i class="fas fa-heart"></i></a>
+                                </div>
+                            </div>
+                            <h3>Lavender Dreams</h3>
+                            <p class="product-desc">Calming lavender, bergamot, and white tea</p>
+                            <div class="price">$105.00</div>
+                        </div>
+                        
+                        <!-- Product 9 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://dynamic.zacdn.com/536zlbYQp2MMRQwzC9ar0t0IpKg=/filters:quality(70):format(webp)/https://static-id.zacdn.com/p/jo-malone-8225-4615304-1.jpg" alt="Peony Blush Perfume">
+                                <div class="hover-icons">
+                                    <a href="#" title="Quick View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" title="Add to Cart"><i class="fas fa-shopping-cart"></i></a>
+                                    <a href="#" title="Add to Wishlist"><i class="fas fa-heart"></i></a>
+                                </div>
+                            </div>
+                            <h3>Peony Blush</h3>
+                            <p class="product-desc">Elegant peony, freesia, and cashmere wood</p>
+                            <div class="price">$140.00</div>
+                        </div>
+                        
+                        <!-- Product 10 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Mq6Q-walp7poaEsTsHHk0a-1NC3Pr33p4Q&s" alt="Evening Spice Perfume">
+                                <div class="hover-icons">
+                                    <a href="#" title="Quick View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" title="Add to Cart"><i class="fas fa-shopping-cart"></i></a>
+                                    <a href="#" title="Add to Wishlist"><i class="fas fa-heart"></i></a>
+                                </div>
+                            </div>
+                            <h3>Evening Spice</h3>
+                            <p class="product-desc">Warm cinnamon, clove, and black pepper blend</p>
+                            <div class="price">$125.00</div>
+                        </div>
+                        
+                        <!-- Product 11 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://orenafragrances.com/cdn/shop/files/PerfumeOil8-Edit.jpg" alt="Iris Dream Perfume">
+                                <div class="hover-icons">
+                                    <a href="#" title="Quick View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" title="Add to Cart"><i class="fas fa-shopping-cart"></i></a>
+                                    <a href="#" title="Add to Wishlist"><i class="fas fa-heart"></i></a>
+                                </div>
+                            </div>
+                            <h3>Iris Dream</h3>
+                            <p class="product-desc">Elegant iris, violet leaves, and musk</p>
+                            <div class="price">$145.00</div>
+                        </div>
+                        
+                        <!-- Product 12 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://alrehab.com/wp-content/uploads/2024/05/Z0F5XajNwYPgUFyQai7QGG5fKQl7f8AgqxFkZBKd.webp" alt="Ocean Breeze Perfume">
+                                <div class="hover-icons">
+                                    <a href="#" title="Quick View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" title="Add to Cart"><i class="fas fa-shopping-cart"></i></a>
+                                    <a href="#" title="Add to Wishlist"><i class="fas fa-heart"></i></a>
+                                </div>
+                            </div>
+                            <h3>Ocean Breeze</h3>
+                            <p class="product-desc">Fresh sea salt, coconut, and white musk</p>
+                            <div class="price">$130.00</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pagination">
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <span class="pagination-dots">...</span>
+                    <button class="pagination-btn">8</button>
+                    <button class="pagination-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-collection">
+            <div class="container">
+                <h2>Featured Collection: Summer Escapes</h2>
+                <p class="collection-intro">Our limited edition summer collection inspired by exotic destinations</p>
+                <div class="featured-products-slider">
+                    <!-- Featured Product 1 -->
+                    <div class="product-card featured">
+                        <span class="product-badge">Limited Edition</span>
+                        <div class="product-image">
+                            <img src="https://images.tokopedia.net/img/cache/700/hDjmkQ/2024/11/6/e72a460e-b531-4f8e-a21a-7b846a2f414d.jpg" alt="Bali Sunset Perfume">
+                            <div class="hover-icons">
+                                <a href="#" title="Quick View"><i class="fas fa-eye"></i></a>
+                                <a href="#" title="Add to Cart"><i class="fas fa-shopping-cart"></i></a>
+                                <a href="#" title="Add to Wishlist"><i class="fas fa-heart"></i></a>
+                            </div>
+                        </div>
+                        <h3>Bali Sunset</h3>
+                        <p class="product-desc">Tropical coconut, frangipani, and vanilla</p>
+                        <div class="price">$165.00</div>
+                    </div>
+                    
+                    <!-- Featured Product 2 -->
+                    <div class="product-card featured">
+                        <span class="product-badge">New</span>
+                        <div class="product-image">
+                            <img src="https://www.trudibleu.com/cdn/shop/files/Amalfi_Breeze.jpg?v=1727953552" alt="Amalfi Breeze Perfume">
+                            <div class="hover-icons">
+                                <a href="#" title="Quick View"><i class="fas fa-eye"></i></a>
+                                <a href="#" title="Add to Cart"><i class="fas fa-shopping-cart"></i></a>
+                                <a href="#" title="Add to Wishlist"><i class="fas fa-heart"></i></a>
+                            </div>
+                        </div>
+                        <h3>Amalfi Breeze</h3>
+                        <p class="product-desc">Coastal lemon, bergamot, and sea salt</p>
+                        <div class="price">$155.00</div>
+                    </div>
+                    
+                    <!-- Featured Product 3 -->
+                    <div class="product-card featured">
+                        <span class="product-badge">Best Seller</span>
+                        <div class="product-image">
+                            <img src="https://www.soberberlin.com/cdn/shop/files/Sober_Parfum_Kyoto.jpg?v=1695884800" alt="Kyoto Garden Perfume">
+                            <div class="hover-icons">
+                                <a href="#" title="Quick View"><i class="fas fa-eye"></i></a>
+                                <a href="#" title="Add to Cart"><i class="fas fa-shopping-cart"></i></a>
+                                <a href="#" title="Add to Wishlist"><i class="fas fa-heart"></i></a>
+                            </div>
+                        </div>
+                        <h3>Kyoto Garden</h3>
+                        <p class="product-desc">Delicate cherry blossom, green tea, and bamboo</p>
+                        <div class="price">$170.00</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="newsletter-content">
+                <h2>Join Our Mailing List</h2>
+                <p>Subscribe to receive updates on new collections, exclusive offers, and fragrance insights</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>Heagrance</h3>
+                <p>Luxury fragrances for the discerning customer. Crafted with passion and the finest ingredients.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="products.html">All Perfumes</a></li>
+                    <li><a href="#">Women's Collection</a></li>
+                    <li><a href="#">Men's Collection</a></li>
+                    <li><a href="#">Gift Sets</a></li>
+                    <li><a href="#">Special Offers</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Information</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Fragrance Guide</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Heagrance. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
